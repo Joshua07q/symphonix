@@ -1363,42 +1363,114 @@ input {
 }
 
 /* ── Responsive ────────────────────────────────────────────────────── */
-@media (max-width: 480px) {
+
+/* Tablets and below */
+@media (max-width: 640px) {
   .content {
-    padding: 16px 16px 80px;
+    padding: 16px 16px 100px;
   }
 
   .header-inner {
-    padding: 20px 16px 14px;
+    padding: 18px 16px 14px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .header-subtitle {
+    font-size: 12px;
   }
 
   .tab-bar-inner {
-    padding: 0 16px;
+    padding: 0 8px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   .tab-btn {
     padding: 10px 14px;
     font-size: 13px;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
-  .player-chord-badge {
-    padding: 10px 16px;
-    font-size: 17px;
-    min-width: 54px;
-  }
-
+  /* Song cards - stack layout on mobile */
   .song-card {
-    padding: 14px 16px;
+    padding: 14px 14px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
   }
 
   .song-card-right {
-    gap: 6px;
+    gap: 8px;
+    width: 100%;
   }
 
   .song-card-genre {
     display: none;
   }
 
+  .song-card-bpm {
+    font-size: 11px;
+  }
+
+  /* Player - make it breathe */
+  .player-chords {
+    gap: 8px;
+  }
+
+  .player-chord-badge {
+    padding: 10px 16px;
+    font-size: 17px;
+    min-width: 50px;
+    border-radius: 8px;
+  }
+
+  .player-controls {
+    gap: 12px;
+    flex-direction: column;
+  }
+
+  .bpm-slider {
+    width: 140px;
+  }
+
+  /* Chord diagrams - 2 per row on mobile */
+  .chord-diagrams-row {
+    gap: 12px;
+    justify-content: center;
+  }
+
+  /* Chord library grid */
+  .chord-grid {
+    gap: 6px;
+  }
+
+  .chord-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .chord-detail-card {
+    padding: 20px 16px;
+  }
+
+  /* Theory cards */
+  .theory-card {
+    padding: 14px 16px;
+  }
+
+  .theory-card-title {
+    font-size: 14px;
+  }
+
+  .theory-card-body p {
+    font-size: 13px;
+  }
+
+  /* Tracker */
   .tracker-stats {
     gap: 8px;
   }
@@ -1408,6 +1480,144 @@ input {
   }
 
   .stat-number {
-    font-size: 24px;
+    font-size: 22px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .tracker-item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  /* Song detail */
+  .song-detail-title {
+    font-size: 22px;
+  }
+
+  .song-detail-art {
+    width: 72px;
+    height: 72px;
+    border-radius: 8px;
+  }
+
+  .song-detail-header.with-art {
+    gap: 12px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .section-label {
+    font-size: 10px;
+    margin-bottom: 10px;
+  }
+
+  .theory-text {
+    font-size: 13px;
+    line-height: 1.65;
+  }
+
+  .tips-list li {
+    font-size: 12px;
+  }
+
+  /* Spotify */
+  .btn-spotify-connect {
+    padding: 12px 16px;
+    font-size: 13px;
+    border-radius: 10px;
+  }
+
+  .spotify-result-card {
+    padding: 8px 10px;
+    gap: 10px;
+  }
+
+  .spotify-result-art {
+    width: 40px;
+    height: 40px;
+  }
+
+  .spotify-result-title {
+    font-size: 13px;
+  }
+
+  .spotify-result-artist {
+    font-size: 11px;
+  }
+
+  .btn-analyze {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  .spotify-results {
+    max-height: 300px;
+  }
+
+  /* Audio preview */
+  .audio-preview {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .preview-label {
+    display: none;
+  }
+
+  .btn-open-spotify {
+    font-size: 11px;
+  }
+
+  /* Search */
+  .search-input {
+    font-size: 14px;
+    padding: 11px 36px;
+  }
+
+  .song-detail-tags {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .content {
+    padding: 12px 12px 100px;
+  }
+
+  .header-inner {
+    padding: 14px 12px 10px;
+  }
+
+  .tab-btn {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .player-chord-badge {
+    padding: 8px 12px;
+    font-size: 15px;
+    min-width: 44px;
+  }
+
+  .song-detail-title {
+    font-size: 19px;
+  }
+
+  .fretboard-wrap {
+    transform: scale(0.9);
+    transform-origin: top center;
   }
 }

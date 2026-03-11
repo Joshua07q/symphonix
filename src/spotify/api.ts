@@ -1,5 +1,5 @@
 import { SPOTIFY_API_BASE } from "./config";
-import { getValidToken } from "./auth";
+import { getValidToken, logout } from "./auth";
 import type {
   SpotifyTrack,
   SpotifyAudioFeatures,
@@ -11,12 +11,22 @@ async function spotifyFetch<T>(endpoint: string): Promise<T | null> {
   const token = await getValidToken();
   if (!token) return null;
 
-  const res = await fetch(`${SPOTIFY_API_BASE}${endpoint}`, {
-    headers: { Authorization: `Bearer ${token}` },
-  });
+  try {
+    const res = await fetch(`${SPOTIFY_API_BASE}${endpoint}`, {
+      headers: { Authorization: `Bearer ${token}` },
+    });
 
-  if (!res.ok) return null;
-  return res.json();
+    if (res.status === 401 || res.status === 403) {
+      // Token is bad, clear auth state
+      logout();
+      return null;
+    }
+
+    if (!res.ok) return null;
+    return res.json();
+  } catch {
+    return null;
+  }
 }
 
 export async function searchTracks(query: string): Promise<SpotifyTrack[]> {
