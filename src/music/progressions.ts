@@ -1,0 +1,177 @@
+
+export interface ProgressionTemplate {
+  name: string;
+  numerals: string[];
+  mode: "major" | "minor";
+  genres: string[];
+  energyRange: [number, number];
+  valenceRange: [number, number];
+  weight: number;
+}
+
+export const PROGRESSION_TEMPLATES: ProgressionTemplate[] = [
+  // ── Major progressions ──
+  {
+    name: "Pop Anthem",
+    numerals: ["I", "V", "vi", "IV"],
+    mode: "major",
+    genres: ["pop", "rock", "indie", "folk"],
+    energyRange: [0.3, 1.0],
+    valenceRange: [0.4, 1.0],
+    weight: 10,
+  },
+  {
+    name: "Doo-Wop / 50s",
+    numerals: ["I", "vi", "IV", "V"],
+    mode: "major",
+    genres: ["pop", "r&b", "soul", "doo-wop"],
+    energyRange: [0.2, 0.7],
+    valenceRange: [0.4, 0.9],
+    weight: 8,
+  },
+  {
+    name: "Classic Rock",
+    numerals: ["I", "IV", "V", "I"],
+    mode: "major",
+    genres: ["rock", "blues", "country"],
+    energyRange: [0.5, 1.0],
+    valenceRange: [0.3, 1.0],
+    weight: 7,
+  },
+  {
+    name: "Upbeat Pop",
+    numerals: ["I", "IV", "vi", "V"],
+    mode: "major",
+    genres: ["pop", "dance", "electronic"],
+    energyRange: [0.5, 1.0],
+    valenceRange: [0.5, 1.0],
+    weight: 7,
+  },
+  {
+    name: "Sensitive",
+    numerals: ["I", "iii", "IV", "V"],
+    mode: "major",
+    genres: ["pop", "indie", "folk", "singer-songwriter"],
+    energyRange: [0.1, 0.6],
+    valenceRange: [0.3, 0.7],
+    weight: 5,
+  },
+  {
+    name: "Bright Drive",
+    numerals: ["I", "V", "IV", "I"],
+    mode: "major",
+    genres: ["rock", "pop", "punk"],
+    energyRange: [0.6, 1.0],
+    valenceRange: [0.5, 1.0],
+    weight: 6,
+  },
+  {
+    name: "Sweet Soul",
+    numerals: ["I", "ii", "vi", "V"],
+    mode: "major",
+    genres: ["r&b", "soul", "neo-soul", "hip hop"],
+    energyRange: [0.2, 0.7],
+    valenceRange: [0.3, 0.7],
+    weight: 6,
+  },
+  // ── Minor progressions ──
+  {
+    name: "Sad Pop",
+    numerals: ["vi", "IV", "I", "V"],
+    mode: "major", // played starting from vi but in a major key context
+    genres: ["pop", "indie", "alternative"],
+    energyRange: [0.2, 0.7],
+    valenceRange: [0.1, 0.5],
+    weight: 9,
+  },
+  {
+    name: "Dark Minor Loop",
+    numerals: ["i", "VI", "VII", "i"],
+    mode: "minor",
+    genres: ["hip hop", "rap", "trap", "r&b"],
+    energyRange: [0.4, 1.0],
+    valenceRange: [0.0, 0.5],
+    weight: 10,
+  },
+  {
+    name: "Emo Rap",
+    numerals: ["i", "v", "VII", "IV"],
+    mode: "minor",
+    genres: ["hip hop", "rap", "emo", "alternative"],
+    energyRange: [0.3, 0.8],
+    valenceRange: [0.0, 0.4],
+    weight: 8,
+  },
+  {
+    name: "Minor Climb",
+    numerals: ["i", "III", "VII", "IV"],
+    mode: "minor",
+    genres: ["pop", "indie", "electronic"],
+    energyRange: [0.3, 0.8],
+    valenceRange: [0.2, 0.6],
+    weight: 7,
+  },
+  {
+    name: "Tension Builder",
+    numerals: ["i", "iv", "VII", "III"],
+    mode: "minor",
+    genres: ["r&b", "hip hop", "soul"],
+    energyRange: [0.2, 0.7],
+    valenceRange: [0.1, 0.5],
+    weight: 6,
+  },
+  {
+    name: "Aggressive Minor",
+    numerals: ["i", "v", "i", "VII"],
+    mode: "minor",
+    genres: ["hip hop", "rap", "trap", "metal"],
+    energyRange: [0.6, 1.0],
+    valenceRange: [0.0, 0.4],
+    weight: 8,
+  },
+  {
+    name: "Cinematic Dark",
+    numerals: ["i", "VI", "v", "i"],
+    mode: "minor",
+    genres: ["hip hop", "cinematic", "electronic", "trap"],
+    energyRange: [0.4, 0.9],
+    valenceRange: [0.0, 0.4],
+    weight: 7,
+  },
+  {
+    name: "Melancholy Pop",
+    numerals: ["i", "VII", "VI", "VII"],
+    mode: "minor",
+    genres: ["pop", "indie", "alternative"],
+    energyRange: [0.2, 0.7],
+    valenceRange: [0.1, 0.5],
+    weight: 6,
+  },
+  {
+    name: "R&B Smooth",
+    numerals: ["i", "iv", "v", "i"],
+    mode: "minor",
+    genres: ["r&b", "soul", "neo-soul"],
+    energyRange: [0.1, 0.6],
+    valenceRange: [0.1, 0.5],
+    weight: 6,
+  },
+  {
+    name: "Harmonic Minor Drama",
+    numerals: ["i", "VI", "iv", "V"],
+    mode: "minor",
+    genres: ["pop", "classical", "metal", "electronic"],
+    energyRange: [0.3, 0.9],
+    valenceRange: [0.1, 0.5],
+    weight: 5,
+  },
+  {
+    name: "Power Punk",
+    numerals: ["I", "IV", "V", "IV"],
+    mode: "major",
+    genres: ["punk", "rock", "pop punk"],
+    energyRange: [0.7, 1.0],
+    valenceRange: [0.4, 1.0],
+    weight: 5,
+  },
+];
